@@ -1,0 +1,62 @@
+// Book class to represent individual books
+class Book {
+    private String title;
+    private String author;
+    private String barcode;
+    private boolean checkedOut;
+    private String dueDate;
+
+   
+    public Book(String title, String author, String barcode) {
+        this.title = title;
+        this.author = author;
+        this.barcode = barcode;
+        this.setCheckedOut(false);
+        this.dueDate = null;
+    }
+
+   
+    public String getTitle() {
+        return title;
+    }
+
+
+    public String getAuthor() {
+        return author;
+    }
+
+    
+    public String getBarcode() {
+        return barcode;
+    }
+
+    // Method to check out the book
+    public void checkOut() {
+        setCheckedOut(true);
+        
+        
+        
+        // calculation
+        dueDate = "Set due date 4 weeks from current date";
+    }
+
+    
+    public void checkIn() {
+        setCheckedOut(false);
+        dueDate = null; 
+    }
+
+    
+    public String toString() {
+        return "Title: " + title + ", Author: " + author + ", Barcode: " + barcode + ", Checked Out: " + isCheckedOut()
+                + ", Due Date: " + dueDate;
+    }
+
+	public boolean isCheckedOut() {
+		return checkedOut;
+	}
+
+	public void setCheckedOut(boolean checkedOut) {
+		this.checkedOut = checkedOut;
+	}
+}
